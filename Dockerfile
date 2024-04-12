@@ -10,6 +10,11 @@ COPY package*.json ./
 # Install app dependencies, including Material-UI 5
 RUN npm install
 
+# Mention the Build Arg
+ARG REACT_APP_RAPID_API_KEY
+ENV REACT_APP_RAPID_API_KEY=$REACT_APP_RAPID_API_KEY
+
+
 # Copy the rest of the application code to the working directory
 COPY . .
 
